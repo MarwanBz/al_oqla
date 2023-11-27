@@ -17,6 +17,7 @@ export const TodoList = () => {
 
   const deleteTask = (taskId) => {
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
+    alert("are you sure??")
     setTasks(updatedTasks);
   };
 

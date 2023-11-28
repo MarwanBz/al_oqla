@@ -1,16 +1,34 @@
+import { useEffect, useState } from 'react'
+
 import { Navbar } from './components/Navbar'
+import { ProductCatalog } from './components/ProductCatalog'
 import reactLogo from './assets/react.svg'
-import { useState } from 'react'
 import viteLogo from '/vite.svg'
 
-function App() {
+function App(props) {
+const [products, setProducts] = useState([])
 
-  return (
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`https://fakestoreapi.com/products`);
+      const newData = await response.json();
+      setProducts(newData);
+    };
+
+    fetchData();
+  }, []);
+
+  if (products) {
+      return (
     <>
     <Navbar />
-    <h1>Hello</h1>   
+    <ProductCatalog products={products} />
     </>
-  )
+  );
+  } else {
+    return <div>loading</div>;
+  }
 }
+  
 
 export default App

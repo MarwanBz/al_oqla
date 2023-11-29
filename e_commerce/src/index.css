@@ -153,7 +153,7 @@ span {
 
 .filter-bar {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin: 20px 0;
 }
 

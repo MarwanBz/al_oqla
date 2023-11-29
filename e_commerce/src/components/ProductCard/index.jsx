@@ -10,6 +10,7 @@ export default function ProductCard({ product, showMore, toggleMore }) {
         title={product.title}
         price={product.price}
         description={product.description}
+        img={product.image}
       />
       {product.description.length > maxDescriptionLength && (
         <>

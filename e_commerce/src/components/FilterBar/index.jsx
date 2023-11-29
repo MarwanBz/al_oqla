@@ -1,11 +1,13 @@
 import React from 'react'
 
 export const FilterBar = ({categories,activeCategory,onSelectCategory}) => {
+  const allCategory = "All";
+
   return (
     <div className="filter-bar">
-      {categories.map((category) => (
+      {[allCategory, ...categories].map((category) => (
         <button
-          key={category}
+          key={category.id}
           className={`filter-button ${
             category === activeCategory ? "active" : ""
           }`}

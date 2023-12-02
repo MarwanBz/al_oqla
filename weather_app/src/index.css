@@ -1,16 +1,6 @@
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body {
+  background-image: linear-gradient(#6145D9,#4ABED5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }

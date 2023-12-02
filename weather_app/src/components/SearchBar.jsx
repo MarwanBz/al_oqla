@@ -1,7 +1,24 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-export const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
+  const [location, setLocation] = useState("");
+
+  const handleSearch = () => {
+    if (location.trim() !== "") {
+      onSearch(location);
+    }
+  };
+
   return (
-    <div>SearchBar</div>
-  )
-}
+    <div>
+      <input
+        type="text"
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+      />
+      <button onClick={handleSearch}>Search</button>
+    </div>
+  );
+};
+
+export default SearchBar;
